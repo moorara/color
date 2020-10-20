@@ -1,31 +1,18 @@
-# Archived project. No maintenance. 
+[![Go Doc][godoc-image]][godoc-url]
+[![Build Status][workflow-image]][workflow-url]
 
-This project is not maintained anymore and is archived. Feel free to fork and
-make your own changes if needed. For more detail read my blog post: [Taking an indefinite sabbatical from my projects](https://arslan.io/2018/10/09/taking-an-indefinite-sabbatical-from-my-projects/)
+# Color
 
-Thanks to everyone for their valuable feedback and contributions.
+This is a fork of https://github.com/fatih/color
 
-
-# Color [![GoDoc](https://godoc.org/github.com/fatih/color?status.svg)](https://godoc.org/github.com/fatih/color) 
-
-Color lets you use colorized outputs in terms of [ANSI Escape
-Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Go (Golang). It
-has support for Windows too! The API can be used in several ways, pick one that
-suits you.
-
+Color lets you use colorized outputs in terms of [ANSI Escape Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Go.
+It has support for Windows too! The API can be used in several ways, pick one that suits you.
 
 ![Color](https://i.imgur.com/c1JI0lA.png)
 
-
-## Install
-
-```bash
-go get github.com/fatih/color
-```
-
 ## Examples
 
-### Standard colors
+### Standard Colors
 
 ```go
 // Print with default helper functions
@@ -40,7 +27,7 @@ color.Magenta("And many others ..")
 
 ```
 
-### Mix and reuse colors
+### Mix and Reuse Colors
 
 ```go
 // Create a new color object
@@ -61,7 +48,7 @@ whiteBackground := red.Add(color.BgWhite)
 whiteBackground.Println("Red text with white background.")
 ```
 
-### Use your own output (io.Writer)
+### Use Your Own Output (io.Writer)
 
 ```go
 // Use your own io.Writer output
@@ -71,7 +58,7 @@ blue := color.New(color.FgBlue)
 blue.Fprint(writer, "This will print text in blue.")
 ```
 
-### Custom print functions (PrintFunc)
+### Custom Print Functions (PrintFunc)
 
 ```go
 // Create a custom print function for convenience
@@ -84,7 +71,7 @@ notice := color.New(color.Bold, color.FgGreen).PrintlnFunc()
 notice("Don't forget this...")
 ```
 
-### Custom fprint functions (FprintFunc)
+### Custom Fprint Functions (FprintFunc)
 
 ```go
 blue := color.New(FgBlue).FprintfFunc()
@@ -95,7 +82,7 @@ success := color.New(color.Bold, color.FgGreen).FprintlnFunc()
 success(myWriter, "Don't forget this...")
 ```
 
-### Insert into noncolor strings (SprintFunc)
+### Insert Into Non-Color Strings (SprintFunc)
 
 ```go
 // Create SprintXxx functions to mix strings with other non-colorized strings:
@@ -114,7 +101,7 @@ fmt.Printf("%v %v\n", color.GreenString("Info:"), "an important message.")
 fmt.Fprintf(color.Output, "Windows support: %s", color.GreenString("PASS"))
 ```
 
-### Plug into existing code
+### Plug Into Existing Code
 
 ```go
 // Use handy standard colors
@@ -132,27 +119,25 @@ defer color.Unset() // Use it in your function
 fmt.Println("All text will now be bold magenta.")
 ```
 
-### Disable/Enable color
- 
-There might be a case where you want to explicitly disable/enable color output. the 
-`go-isatty` package will automatically disable color output for non-tty output streams 
-(for example if the output were piped directly to `less`)
+### Disable/Enable Color
 
-`Color` has support to disable/enable colors both globally and for single color 
-definitions. For example suppose you have a CLI app and a `--no-color` bool flag. You 
-can easily disable the color output with:
+There might be a case where you want to explicitly disable/enable color output.
+The `go-isatty` package will automatically disable color output for non-tty output streams (for example if the output were piped directly to `less`)
+
+`Color` has support to disable/enable colors both globally and for single color definitions.
+For example suppose you have a CLI app and a `--no-color` bool flag.
+You can easily disable the color output with:
 
 ```go
-
 var flagNoColor = flag.Bool("no-color", false, "Disable color output")
 
 if *flagNoColor {
-	color.NoColor = true // disables colorized output
+  color.NoColor = true // disables colorized output
 }
 ```
 
-It also has support for single color definitions (local). You can
-disable/enable color output on the fly:
+It also has support for single color definitions (local).
+You can disable/enable color output on the fly:
 
 ```go
 c := color.New(color.FgCyan)
@@ -167,16 +152,16 @@ c.Println("This prints again cyan...")
 
 ## Todo
 
-* Save/Return previous values
-* Evaluate fmt.Formatter interface
-
+  - [ ] Save/Return previous values
+  - [ ] Evaluate fmt.Formatter interface
 
 ## Credits
 
- * [Fatih Arslan](https://github.com/fatih)
- * Windows support via @mattn: [colorable](https://github.com/mattn/go-colorable)
+  - [Fatih Arslan](https://github.com/fatih)
+  - Windows support via @mattn: [colorable](https://github.com/mattn/go-colorable)
 
-## License
 
-The MIT License (MIT) - see [`LICENSE.md`](https://github.com/fatih/color/blob/master/LICENSE.md) for more details
-
+[godoc-url]: https://pkg.go.dev/github.com/moorara/color
+[godoc-image]: https://godoc.org/github.com/moorara/color?status.svg
+[workflow-url]: https://github.com/moorara/color/actions
+[workflow-image]: https://github.com/moorara/color/workflows/Main/badge.svg

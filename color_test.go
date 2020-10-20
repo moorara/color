@@ -9,8 +9,9 @@ import (
 	"github.com/mattn/go-colorable"
 )
 
-// Testing colors is kinda different. First we test for given colors and their
-// escaped formatted results. Next we create some visual tests to be tested.
+// Testing colors is kinda different.
+// First we test for given colors and their escaped formatted results.
+// Next we create some visual tests to be tested.
 // Each visual test includes the color name to be compared.
 func TestColor(t *testing.T) {
 	rb := new(bytes.Buffer)
