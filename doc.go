@@ -1,7 +1,6 @@
 /*
-Package color is an ANSI color package to output colorized or SGR defined
-output to the standard output. The API can be used in several way, pick one
-that suits you.
+Package color is an ANSI color package to output colorized or SGR defined output to the standard output.
+The API can be used in several way, pick one that suits you.
 
 Use simple and default helper functions with predefined foreground colors:
 
@@ -20,9 +19,8 @@ Use simple and default helper functions with predefined foreground colors:
     color.HiBlack("Bright black means gray..")
     color.HiWhite("Shiny white color!")
 
-However there are times where custom color mixes are required. Below are some
-examples to create custom color objects and use the print functions of each
-separate color object.
+However there are times where custom color mixes are required.
+Below are some examples to create custom color objects and use the print functions of each separate color object.
 
     // Create a new color object
     c := color.New(color.FgCyan).Add(color.Underline)
@@ -80,17 +78,15 @@ Or create SprintXxx functions to mix strings with other non-colorized strings:
     fmt.Printf("this %s rocks!\n", info("package"))
 
 Windows support is enabled by default. All Print functions work as intended.
-However only for color.SprintXXX functions, user should use fmt.FprintXXX and
-set the output to color.Output:
+However only for color.SprintXXX functions, user should use fmt.FprintXXX and set the output to color.Output:
 
     fmt.Fprintf(color.Output, "Windows support: %s", color.GreenString("PASS"))
 
     info := New(FgWhite, BgGreen).SprintFunc()
     fmt.Fprintf(color.Output, "this %s rocks!\n", info("package"))
 
-Using with existing code is possible. Just use the Set() method to set the
-standard output to the given parameters. That way a rewrite of an existing
-code is not required.
+Using with existing code is possible. Just use the Set() method to set the standard output to the given parameters.
+That way a rewrite of an existing code is not required.
 
     // Use handy standard colors.
     color.Set(color.FgYellow)
@@ -106,11 +102,9 @@ code is not required.
 
     fmt.Println("All text will be now bold magenta.")
 
-There might be a case where you want to disable color output (for example to
-pipe the standard output of your app to somewhere else). `Color` has support to
-disable colors both globally and for single color definition. For example
-suppose you have a CLI app and a `--no-color` bool flag. You can easily disable
-the color output with:
+There might be a case where you want to disable color output (for example to pipe the standard output of your app to somewhere else).
+`Color` has support to disable colors both globally and for single color definition.
+For example suppose you have a CLI app and a `--no-color` bool flag. You can easily disable the color output with:
 
     var flagNoColor = flag.Bool("no-color", false, "Disable color output")
 
@@ -118,8 +112,8 @@ the color output with:
     	color.NoColor = true // disables colorized output
     }
 
-It also has support for single color definitions (local). You can
-disable/enable color output on the fly:
+It also has support for single color definitions (local).
+You can disable/enable color output on the fly:
 
      c := color.New(color.FgCyan)
      c.Println("Prints cyan text")
