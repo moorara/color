@@ -74,7 +74,7 @@ notice("Don't forget this...")
 ### Custom Fprint Functions (FprintFunc)
 
 ```go
-blue := color.New(FgBlue).FprintfFunc()
+blue := color.New(color.FgBlue).FprintfFunc()
 blue(myWriter, "important notice: %s", stars)
 
 // Mix up with multiple attributes
