@@ -162,6 +162,6 @@ c.Println("This prints again cyan...")
 
 
 [godoc-url]: https://pkg.go.dev/github.com/moorara/color
-[godoc-image]: https://godoc.org/github.com/moorara/color?status.svg
+[godoc-image]: https://pkg.go.dev/badge/github.com/moorara/color
 [workflow-url]: https://github.com/moorara/color/actions
 [workflow-image]: https://github.com/moorara/color/workflows/Main/badge.svg
